@@ -1,2 +1,2 @@
 # sui-coin
-Cubic Coin Move Contract
+Troll Coin Move Contract
