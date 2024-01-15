@@ -20,7 +20,7 @@ module sui_coin::troll {
     /// registered once.
     fun init(witness: TROLL, ctx: &mut TxContext) {
         // Get a treasury cap for the coin and give it to the transaction sender
-        let (treasury_cap, metadata) = coin::create_currency<TROLL>(witness, 9, b"TROLL", b"TROLLn", b"Trōllheim Coin", option::some(url::new_unsafe_from_bytes(b"https://res.cloudinary.com/daniel23/image/upload/v1705188555/WhatsApp_Image_2024-01-13_at_23.58.45_ypsuqz.jpg")), ctx);
+        let (treasury_cap, metadata) = coin::create_currency<TROLL>(witness, 9, b"TR", b"TRn", b"Tr", option::some(url::new_unsafe_from_bytes(b"https://res.cloudinary.com/daniel23/image/upload/v1705188555/WhatsApp_Image_2024-01-13_at_23.58.45_ypsuqz.jpg")), ctx);
         transfer::public_freeze_object(metadata);
         coin::mint_and_transfer(&mut treasury_cap, 1000000000000000000, tx_context::sender(ctx), ctx);
         transfer::public_transfer(treasury_cap, tx_context::sender(ctx));
